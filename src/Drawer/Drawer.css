@@ -1,0 +1,38 @@
+.drawer-div {
+    display: flex;
+    flex-flow: column wrap;
+    
+
+}
+
+.open{
+    width: 20%;
+    height: 500px;
+}
+
+.mini-project-card {
+    height: 100px;
+    width: 100%;
+}
+
+
+.red { 
+    background-color: red ;
+
+}
+
+.green { 
+    background-color: green
+}
+
+.blue { 
+    background-color: blue
+}
+
+.yellow { 
+    background-color: yellow
+}
+
+.gray {
+    background-color: gray
+}

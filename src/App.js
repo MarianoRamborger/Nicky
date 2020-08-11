@@ -1,26 +1,77 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Bio from './Bio/Bio'
+import ProjectCard from './ProjectCard/ProjectCard'
+import ProjectList from './ProjectList/ProjectList'
+import Drawer from './Drawer/Drawer.js'
+import ProjectPage from './ProjectPage/ProjectPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  // Redirect,
+  //Link
+} from "react-router-dom";
+
+
+
+
+const App = () => {
+  // const [ProjectState, ChangeProjectstate] = React.useState("none")
+
+  return(
+
+    <Router>
+
+    <Bio />
+
+    <Switch>
+
+    <Route exact path="/">
+
+    <div className="project-flex">
+    {ProjectList.map(project => {
+      return <ProjectCard project={project} />
+    })}
     </div>
-  );
+
+    </Route>
+
+    <Route exact path="/proyecto1">
+        <div className="project-flex">  
+          <Drawer projects={ProjectList} />
+          <ProjectPage project={ProjectList[0]} />
+        </div>
+    </Route>
+    <Route exact path="/proyecto2">
+        <div className="project-flex">  
+          <Drawer projects={ProjectList} />
+          <ProjectPage project={ProjectList[1]} />
+        </div>
+    </Route>
+    <Route exact path="/proyecto3">
+        <div className="project-flex">  
+          <Drawer projects={ProjectList} />
+          <ProjectPage project={ProjectList[2]} />
+        </div>
+    </Route>
+    <Route exact path="/proyecto4">
+        <div className="project-flex">  
+          <Drawer projects={ProjectList} />
+          <ProjectPage project={ProjectList[3]} />
+        </div>
+    </Route>
+
+
+
+
+
+    </Switch>
+
+    </Router>
+
+  )
 }
 
 export default App;

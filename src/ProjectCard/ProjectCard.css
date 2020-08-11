@@ -1,0 +1,29 @@
+.project-card-div {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card-div:hover{
+    background-color: rgba(111,111,111 ,0.001);
+}
+
+.red { 
+    background-color: red ;
+
+}
+
+.green { 
+    background-color: green
+}
+
+.blue { 
+    background-color: blue
+}
+
+.yellow { 
+    background-color: yellow
+}
