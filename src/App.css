@@ -11,3 +11,17 @@
   display: flex;
   flex-flow: column wrap;
 }
+
+.app-wrapper{
+  display: flex;
+  min-height: 97.8vh; 
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+}
+
+body {
+  background-color: whitesmoke;
+}

@@ -5,6 +5,8 @@ import ProjectCard from './ProjectCard/ProjectCard'
 import ProjectList from './ProjectList/ProjectList'
 import Drawer from './Drawer/Drawer.js'
 import ProjectPage from './ProjectPage/ProjectPage'
+import Footer from './Footer/Footer.js'
+import SAP from './SAP/SAP.js'
 
 import {
   BrowserRouter as Router,
@@ -24,53 +26,70 @@ const App = () => {
 
     <Router>
 
-    <Bio />
+    <div className="app-wrapper">  
 
-    <Switch>
+    <div className="content-wrapper">
+      <Bio />
 
-    <Route exact path="/">
+      <Switch>
 
-    <div className="project-flex">
-    {ProjectList.map(project => {
-      return <ProjectCard project={project} />
-    })}
+          <Route exact path="/">
+
+          <div className="project-flex">
+          {ProjectList.map(project => {
+            return <ProjectCard project={project}  key={project.Titulo}/>
+          })}
+          </div>
+
+          </Route>
+
+
+           <Route exact path="/SAP">
+           
+           <SAP ProjectList={ProjectList}/>
+
+       
+
+          </Route>
+
+
+
+
+          <Route exact path="/proyecto1">
+              <div className="project-flex">  
+                <Drawer projects={ProjectList} />
+                <ProjectPage project={ProjectList[0]} />
+              </div>
+          </Route>
+          <Route exact path="/proyecto2">
+              <div className="project-flex">  
+                <Drawer projects={ProjectList} />
+                <ProjectPage project={ProjectList[1]} />
+              </div>
+          </Route>
+          <Route exact path="/proyecto3">
+              <div className="project-flex">  
+                <Drawer projects={ProjectList} />
+                <ProjectPage project={ProjectList[2]} />
+              </div>
+          </Route>
+          <Route exact path="/proyecto4">
+              <div className="project-flex">  
+                <Drawer projects={ProjectList} />
+                <ProjectPage project={ProjectList[3]} />
+              </div>
+          </Route>
+          
+
+      </Switch>
+
     </div>
-
-    </Route>
-
-    <Route exact path="/proyecto1">
-        <div className="project-flex">  
-          <Drawer projects={ProjectList} />
-          <ProjectPage project={ProjectList[0]} />
-        </div>
-    </Route>
-    <Route exact path="/proyecto2">
-        <div className="project-flex">  
-          <Drawer projects={ProjectList} />
-          <ProjectPage project={ProjectList[1]} />
-        </div>
-    </Route>
-    <Route exact path="/proyecto3">
-        <div className="project-flex">  
-          <Drawer projects={ProjectList} />
-          <ProjectPage project={ProjectList[2]} />
-        </div>
-    </Route>
-    <Route exact path="/proyecto4">
-        <div className="project-flex">  
-          <Drawer projects={ProjectList} />
-          <ProjectPage project={ProjectList[3]} />
-        </div>
-    </Route>
-
-
-
-
-
-    </Switch>
+    </div>
+    <Footer />
 
     </Router>
 
+    
   )
 }
 
