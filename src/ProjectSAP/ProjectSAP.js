@@ -11,7 +11,7 @@ const ProjectSAP  = (props) => {
 
 
    return(
-       <div className={`project-SAP-div ${Clase}` + (props.Selected === Titulo ? ` SAP-selected` : ' last' )} onClick={handleChangeSelected}>
+       <div className={`project-SAP-div ${Clase}` + (props.Selected === Titulo ? ` SAP-selected` : ' SAP-unselected' )} onClick={handleChangeSelected}>
 
 
         {Titulo}

@@ -1,6 +1,8 @@
 
 .project-SAP-div {
-    width: 50%;
+    min-width: 100%;
+    flex-grow: 1;
+
     display: flex;
     flex-flow: column wrap;
     height: 300px;
@@ -22,13 +24,20 @@
     order: 0 !important; 
 }
 
-.last {
-    order: 2;
+.SAP-unselected {
+    height: 200;
 }
+
+
 
 .red { 
     background-color: red ;
+    filter: blur(1)
 
+}
+
+.red:hover {
+    filter: none !important;
 }
 
 .green { 
@@ -41,4 +50,10 @@
 
 .yellow { 
     background-color: yellow
+}
+
+@media only screen and (max-width: 500px) {
+    .project-SAP-div {
+        width: 100%;
+}
 }
